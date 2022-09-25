@@ -27,17 +27,15 @@ node *takeinput()
     node *head = NULL;
     node *temp = head;
 
-    cout << "To end the task of entering family member enter 'exit' in the name block" << endl;
-    
-    cout << "please  enter the name of the family member : " << endl;
-    cin >> name;
-    if (name != "exit")
-    {
+    int number;
+    cout<<"number of members:"<<endl;
+    cin>>number;
+    while (number)
+    {   
+        cout << "please  enter the name of the family member : " << endl;
+        cin >> name;
         cout << "please  enter the age of the family member : " << endl;
         cin >> age;
-    }
-    while (name != "exit")
-    {
         node *newnode = new node(age, name);
 
         if (head == NULL)
@@ -59,13 +57,7 @@ node *takeinput()
             temp = temp->next;
         }
 
-        cout << "please  enter the name of the family member : " << endl;
-        cin >> name;
-        if (name != "exit")
-        {
-            cout << "please  enter the age of the family member : " << endl;
-            cin >> age;
-        }
+        number--;
     }
     return head;
 }
